@@ -1,0 +1,46 @@
+# Dependencias de la APLICACIÓN DE ESCRITORIO (el cliente, lo que corre en
+# Windows). El servidor de Modal tiene las suyas aparte, congeladas en
+# requisitos_servidor_congelados.txt: no se mezclan, porque torch, unsloth y
+# transformers viven SOLO en el servidor.
+#
+#     pip install -r requisitos_cliente.txt
+#
+# Versiones leídas con importlib.metadata del entorno en el que la aplicación
+# funciona (Python 3.11, Windows 11), el 2 de octubre de 2026. Se fijan con
+# '==' por lo mismo que en el servidor: Flet rompió la API de los botones
+# entre versiones menores (manual técnico, sección 2) y una actualización
+# silenciosa deja la interfaz a medias sin dar ningún error.
+
+# --- Interfaz ---
+flet==0.86.5
+
+# --- Gmail y Google Calendar ---
+google-api-python-client==2.199.0
+google-auth==2.56.3
+google-auth-oauthlib==1.4.0
+google-api-core==2.34.0
+googleapis-common-protos==1.75.1
+protobuf==6.33.6
+
+# --- Cliente HTTP hacia el servidor de Modal ---
+requests==2.34.2
+
+# --- Extracción del contenido de los correos (HTML -> texto) ---
+beautifulsoup4==4.15.0
+
+# --- OCR para los correos cuyo contenido está dentro de una imagen ---
+# Sin estos dos la aplicación arranca igual, pero el enlace "leer lo que dicen
+# las imágenes" responde que el lector no está instalado.
+rapidocr-onnxruntime==1.4.4
+pillow==12.1.1
+numpy==2.4.2
+
+# --- Zona horaria ---
+# tzlocal da el nombre IANA ('America/Bogota') que pide la API de Calendar.
+# En Windows lo resuelve con los datos de tzdata, que son archivos y no
+# imports: sin ellos los eventos se crean sin zona horaria.
+tzlocal==5.4.4
+tzdata
+
+# --- Solo para construir el .exe (no hace falta para ejecutar desde Python) ---
+# pyinstaller==6.22.2

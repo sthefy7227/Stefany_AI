@@ -1,0 +1,24 @@
+INDICADORES SOBRE LOS ÚLTIMOS 20 CORREOS REALES DE LA CUENTA 'sthefyrojas7227@gmail.com'
+(Tabla H7 de la monografía; sin contenido de los correos)
+
+Categorías por reglas: otros 2, personal 2, promocional 9, redes_sociales 2, transaccional 5
+Correos que las reglas envían al modelo: 9 de 20
+
+Indicador                                                    A) LLaMA B) Stefany
+--------------------------------------------------------------------------------
+Respuestas con bloque de análisis procesable por código             0          0
+  - propone agendar (fecha límite / reunión)                        0          0
+  - detecta cruce con el calendario real                            0          0
+  - detecta cambio sobre evento agendado                            0          0
+  - detecta cancelación                                             0          0
+Correos resueltos solo con resumen (sin acción)                     -         20
+Resúmenes sustituidos por el escudo (respaldo)                      -          0
+Respuestas que redactan un correo en vez de analizar                0          0
+Respuestas que mencionan calendario o agendar                       0          0
+Respuestas en otro idioma                                           0          0
+Longitud promedio de la respuesta (palabras)                      183         19
+Tiempo promedio por correo (s)                                   19.6        5.4
+
+Nota: en A el modelo no tiene acceso al calendario ni a las cuentas, por lo que
+no puede detectar cruces, cambios ni proponer acciones: esa capacidad la aporta el
+sistema (prompt de producción, calendario real, hilo, adaptador y verificación).
